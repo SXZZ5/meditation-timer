@@ -11,6 +11,7 @@ function hackAutoplayRestrictions() {
 function App() {
     return <>
       <button onClick={hackAutoplayRestrictions}>Hack autoplay restrictions</button>
+      <h6>Ispe nahi click karoge to mobile devices pe unexpected behaviour aa sakta hai</h6>
       <h2>Legendary meditation timer</h2>
       <h6>Because ek interval bell ke liye paisa maang rhe hain app waale</h6>
       <Timer />
@@ -24,7 +25,7 @@ function Timer() {
     const [displayBellInterval, setDisplayBellInteval] = useState(5);
     const intervalId = useRef(-1);
     const [playing, setPlaying] = useState(false);
-    const bellInterval = useRef(10);
+    const bellInterval = useRef(300);
 
     function prepareDisplayTime(rem) {
       // debugger;
@@ -35,7 +36,7 @@ function Timer() {
       let secondString = (seconds < 10) ? "0" : "";
       secondString += seconds.toString();
       setDisplayTime(minuteString + ":" + secondString)
-      console.log(minuteString + ":" + secondString)
+      // console.log(minuteString + ":" + secondString)
     }
 
     function pauseTimer() {
@@ -101,19 +102,19 @@ function playExitSounds(){
   audio.currentTime = 16.0;
   setTimeout(()=>{
     audio.pause();
-    console.log("pausing exit sound");
+    // console.log("pausing exit sound");
   },2500)
   audio.play();
-  console.log("playing exit sound");
+  // console.log("playing exit sound");
 }
 function playChime(){
   audio.currentTime = 0.5;
   setTimeout(()=>{
     audio.pause();
-    console.log("pausing chime sound");
+    // console.log("pausing chime sound");
   },5000)
   audio.play();
-  console.log("playing chime sound");
+  // console.log("playing chime sound");
 }
 
 
