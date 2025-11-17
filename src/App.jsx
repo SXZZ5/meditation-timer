@@ -39,7 +39,6 @@ function Timer() {
       intervalId.current = setInterval(() => {
         remseconds.current = remseconds.current - 1;
         if(remseconds.current < 0) {
-          debugger;
           playExitSounds();
           pauseTimer();
         } else {
@@ -54,7 +53,7 @@ function Timer() {
       playExitSounds();
     }
     function updateRemseconds(e){
-      debugger;
+      // debugger;
       if(playing) return;
       const minutesTime = Number(e.target.value);
       remseconds.current = minutesTime * 60;
